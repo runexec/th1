@@ -1,5 +1,5 @@
 (ns th1.telex
-  (import [clojure.lang.PersistentHashMap]))
+  (import [clojure.lang PersistentHashMap]))
 
 (defprotocol Telex
    (signals [_] "returns all signals")
@@ -51,3 +51,5 @@
 (defn packet [{:keys [to br ring line hop -tdata]}]
   (Packet. to br ring line hop (or -tdata
                                    (tdata nil nil nil))))
+
+

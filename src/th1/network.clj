@@ -1,5 +1,5 @@
 (ns th1.network
-  (import java.net.NetworkInterface))
+  (:import java.net.NetworkInterface))
 
 (defn nics []
   (->> (NetworkInterface/getNetworkInterfaces)
@@ -10,4 +10,7 @@
                :addresses (->> %
                                .getInetAddresses
                                enumeration-seq)))))
-                          
+
+                  
+               
+
