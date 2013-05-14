@@ -49,7 +49,5 @@
   (hop [_] (:_hop _)))
 
 (defn packet [{:keys [to br ring line hop -tdata]}]
-  (let [t (if -tdata
-            -tdata
-            (tdata nil nil nil))]
-    (Packet. to br ring line hop t)))
+  (Packet. to br ring line hop (or -tdata
+                                   (tdata nil nil nil))))
