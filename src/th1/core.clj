@@ -1,6 +1,9 @@
-(ns th1.core)
+(ns th1.core
+  (:use cheshire.core))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn json [coll & [pretty?]]
+  (let [form (partial generate-string
+                      coll)]
+    (if-not pretty?
+      (form)
+      (form {:pretty true}))))

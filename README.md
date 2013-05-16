@@ -28,5 +28,11 @@ th1.telex>
 	  :-tdata telex-data}))
 {:+SignalExample "def", :.CommandExample "abc", :_HeaderExample "ghi"}
 nil
+th1.telex> 
+(clojure.pprint/pprint
+ (th1.core/json 
+  (packet {:-tdata telex-data})))
+"{\"_to\":null,\"_br\":null,\"_ring\":null,\"_line\":null,\"_hop\":null,\"+SignalExample\":\"def\",\".CommandExample\":\"abc\",\"_HeaderExample\":\"ghi\"}"
+nil
 
 ```
